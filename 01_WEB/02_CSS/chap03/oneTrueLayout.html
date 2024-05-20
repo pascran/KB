@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #top {
+        background-color: red;
+        height: 200px;
+      }
+      #bottom {
+        background-color: blue;
+        height: 200px;
+      }
+      #middle {
+        display: flex;
+        flex-direction: row;
+        height: 200px;
+      }
+      #left {
+        background-color: green;
+        flex-grow: 3;
+      }
+      #right {
+        background-color: yellow;
+        flex-grow: 7;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">Lorem ipsum dolor sit amet, ...</div>
+    <div id="middle">
+      <div id="left">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+      <div id="right">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...
+      </div>
+    </div>
+    <div id="bottom">Lorem ipsum dolor sit amet, ...</div>
+  </body>
+</html>
