@@ -1,0 +1,31 @@
+<div id="app">
+  x : <input type="text" v-model.number="x" /><br />
+  y : <input type="text" v-model.number="y" /><br />
+  덧셈 결과 : {{sum}}
+</div>
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return { x: 0, y: 0, sum: 0 };
+    },
+    watch: {
+      x(current, old) {
+        console.log(`## x : ${old} --> ${current}`);
+        // 여기서 Number 는 생성자임. new를 안썼기때문에
+        // 걍 함수 호출
+        var result = Number(current) + Number(this.y);
+        //여기에 this.sum 에서 렌더링이 다시 일어남
+        if (isNaN(result)) this.sum = 0;
+        else this.sum = result;
+      },
+      y(current, old) {
+        console.log(`## y : ${old} --> ${current}`);
+        var result = Number(this.x) + Number(current);
+        if (isNaN(result)) this.sum = 0;
+        else this.sum = result;
+      },
+    },
+  }).mount('#app');
+</script>
