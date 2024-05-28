@@ -1,7 +1,7 @@
 <template>
   <li
     class="list-group-item"
-    :class="{ 'list-group-item-success': todoItem.completed }"
+    :class="{ 'list-group-item-dark': todoItem.completed }"
     @click="$emit('toggle-completed', todoItem.id)"
   >
     <span class="pointer" :class="{ 'todo-done': todoItem.completed }">
