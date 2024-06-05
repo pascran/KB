@@ -1,0 +1,39 @@
+<style>
+  .btnColor {
+    background-color: aqua;
+    color: 'black';
+  }
+  .btnStretch {
+    text-align: center;
+    width: 520px;
+  }
+  .btnBorder {
+    border: khaki 1px dashed;
+  }
+</style>
+<div id="app">
+  <input type="checkbox" v-model="btnColor" />
+  색 칠하기
+  <br />
+
+  <input type="checkbox" v-model="btnStretch" />
+  늘리고 중앙정렬하기
+  <br /><input type="checkbox" v-model="btnBorder" />
+  테두리 만들기
+
+  <br />
+  <button :class="{btnColor,btnStretch,btnBorder}">테스트 버튼</button>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+  var vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return {
+        btnColor: false,
+        btnStretch: false,
+        btnBorder: false,
+      };
+    },
+  }).mount('#app');
+</script>
